@@ -7,7 +7,7 @@ import { JsonplaceholderService } from '../services/jsonplaceholder.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  items: any = [];
+  items: { id: number; title: string; body: string }[] = [];
   constructor(
     private jsonplaceholderService: JsonplaceholderService
   ) { }
