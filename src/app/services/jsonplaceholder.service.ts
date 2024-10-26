@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Root {
+export interface Datos {
   userId: number
   id: number
   title: string
   body: string
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,8 +16,7 @@ export class JsonplaceholderService {
   constructor(
     private http: HttpClient
   ) { }
-
-  obtenerDatoss(): Observable<Root[]> {
-    return this.http.get<Root[]>(this.url);
+  obtenerDatoss(): Observable<Datos[]> {
+    return this.http.get<Datos[]>(this.url);
   }
 }

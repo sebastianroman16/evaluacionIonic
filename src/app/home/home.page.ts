@@ -12,14 +12,14 @@ export class HomePage implements OnInit {
     private jsonplaceholderService: JsonplaceholderService
   ) { }
   ngOnInit() {
-    const datos = localStorage.getItem('items');
-    if (datos) {
-      this.items = JSON.parse(datos);
+    const datosApi = localStorage.getItem('datos');
+    if (datosApi) {
+      this.items = JSON.parse(datosApi);
       console.log('Datos de localStorage')
     } else {
       this.jsonplaceholderService.obtenerDatoss().subscribe(data => {
         this.items = data;
-        localStorage.setItem('items', JSON.stringify(this.items));
+        localStorage.setItem('datos', JSON.stringify(this.items));
       });
     }
   }
